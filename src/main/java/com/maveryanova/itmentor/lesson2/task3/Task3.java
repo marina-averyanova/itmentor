@@ -1,17 +1,15 @@
 package com.maveryanova.itmentor.lesson2.task3;
 
 import com.google.gson.Gson;
+import com.maveryanova.itmentor.Randomizer;
 import com.maveryanova.itmentor.lesson2.task3.model.Name;
 import com.maveryanova.itmentor.lesson2.task3.model.Person;
 import com.maveryanova.itmentor.lesson2.task3.model.Sex;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.Instant;
 import java.util.Arrays;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Task3 {
     // 3. Дан массив объектов Person.
@@ -30,6 +28,7 @@ public class Task3 {
 
     private Name[] maleNames;
     private Name[] femaleNames;
+    private final Randomizer randomizer = new Randomizer();
 
     private static final String MALE_NAMES_FILE = "male_names.json";
     private static final String FEMALE_NAMES_FILE = "female_names.json";
@@ -80,20 +79,20 @@ public class Task3 {
     }
 
     private int generateAge() {
-        return ThreadLocalRandom.current().nextInt(1, 100 + 1);
+        return randomizer.getRandomNumber(1, 100);
     }
 
     private int generateSex() {
-        return ThreadLocalRandom.current().nextInt(1, 2 + 1);
+        return randomizer.getRandomNumber(1, 2);
     }
 
     public String generateName(Sex sex) {
         int id;
         if (sex.equals(Sex.WOMAN)) {
-            id = ThreadLocalRandom.current().nextInt(1, femaleNames.length + 1);
+            id = randomizer.getRandomNumber(1, femaleNames.length);
             return femaleNames[id].name;
         } else {
-            id = ThreadLocalRandom.current().nextInt(1, maleNames.length + 1);
+            id = randomizer.getRandomNumber(1, maleNames.length);
             return maleNames[id].name;
         }
     }
@@ -104,12 +103,5 @@ public class Task3 {
 
         Gson gson = new Gson();
         return gson.fromJson(content, Name[].class);
-    }
-
-    public void write(String fileName, String str) throws IOException {
-        Path path = Paths.get(fileName);
-        byte[] strToBytes = str.getBytes();
-
-        Files.write(path, strToBytes);
     }
 }

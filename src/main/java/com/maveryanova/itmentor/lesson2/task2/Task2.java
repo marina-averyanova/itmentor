@@ -1,6 +1,6 @@
 package com.maveryanova.itmentor.lesson2.task2;
 
-import com.maveryanova.itmentor.lesson2.task1.Randomizer;
+import com.maveryanova.itmentor.Randomizer;
 
 public class Task2 {
     // 2. Составить программу, генерирующую N случайных чисел.
@@ -14,7 +14,7 @@ public class Task2 {
     public void squareRoots(int n) throws Exception {
         int [] arr = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = randomizer.getRandomNumber();
+            arr[i] = randomizer.getRandomNumber(-100500, 100500);
         }
         doSquarePower(arr);
     }
