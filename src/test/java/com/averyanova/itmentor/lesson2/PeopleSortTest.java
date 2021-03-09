@@ -1,4 +1,4 @@
-package com.averyanova.algorithms;
+package com.averyanova.itmentor.lesson2;
 
 import com.maveryanova.itmentor.lesson2.task3.HeapSortPeopleSorting;
 import com.maveryanova.itmentor.lesson2.task3.SelectionSortPeopleSorting;

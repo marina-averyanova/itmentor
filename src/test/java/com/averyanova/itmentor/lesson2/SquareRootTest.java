@@ -1,4 +1,4 @@
-package com.averyanova.algorithms;
+package com.averyanova.itmentor.lesson2;
 
 import com.maveryanova.itmentor.lesson2.task2.Task2;
 import org.junit.jupiter.api.Test;
