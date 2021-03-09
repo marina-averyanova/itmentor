@@ -67,7 +67,7 @@ public class Task3 {
         sort2.sort(array2);
         Instant end2 = Instant.now();
 
-        System.out.println("heap  duration=" + (end2.toEpochMilli() - start2.toEpochMilli()));
+        System.out.println("heap sort duration=" + (end2.toEpochMilli() - start2.toEpochMilli()));
         System.out.println(Arrays.toString(array2));
     }
 
