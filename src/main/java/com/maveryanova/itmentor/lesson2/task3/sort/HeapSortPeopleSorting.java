@@ -1,11 +1,12 @@
-package com.maveryanova.itmentor.lesson2.task3;
+package com.maveryanova.itmentor.lesson2.task3.sort;
 
+import com.maveryanova.itmentor.lesson2.task3.model.DuplicatedException;
 import com.maveryanova.itmentor.lesson2.task3.model.Person;
 
 public class HeapSortPeopleSorting implements PeopleSorting {
 
     @Override
-    public void sort(Person[] array) throws Exception {
+    public void sort(Person[] array) throws DuplicatedException {
         // build start heap
         for (int i = array.length / 2 - 1; i >= 0; i--) {
             heapify(array, i, array.length);
@@ -17,7 +18,7 @@ public class HeapSortPeopleSorting implements PeopleSorting {
         }
     }
 
-    private void heapify(Person[] array, int rootIndex, int heapSize) throws Exception {
+    private void heapify(Person[] array, int rootIndex, int heapSize) throws DuplicatedException {
         // max element goes to root
         int leftChildIndex = 2 * rootIndex + 1;
         int rightChildIndex = leftChildIndex + 1;

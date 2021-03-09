@@ -11,9 +11,9 @@ public class Person {
         this.name = name;
     }
 
-    public static int compare(Person p1, Person p2) throws Exception {
+    public static int compare(Person p1, Person p2) throws DuplicatedException {
         if (!p1.equals(p2) && p1.age == p2.age && p1.name.equals(p2.name) && p1.sex.equals(p2.sex)) {
-            throw new Exception("two equal people!");
+            throw new DuplicatedException();
         }
 
         int sexCompareResult = p1.sex.compareTo(p2.sex);

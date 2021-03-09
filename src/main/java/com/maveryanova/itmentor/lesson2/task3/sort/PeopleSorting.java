@@ -1,4 +1,4 @@
-package com.maveryanova.itmentor.lesson2.task3;
+package com.maveryanova.itmentor.lesson2.task3.sort;
 
 import com.maveryanova.itmentor.lesson2.task3.model.Person;
 

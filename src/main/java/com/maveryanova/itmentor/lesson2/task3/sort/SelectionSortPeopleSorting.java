@@ -1,12 +1,12 @@
-package com.maveryanova.itmentor.lesson2.task3;
+package com.maveryanova.itmentor.lesson2.task3.sort;
 
-import com.maveryanova.itmentor.lesson2.task3.PeopleSorting;
+import com.maveryanova.itmentor.lesson2.task3.model.DuplicatedException;
 import com.maveryanova.itmentor.lesson2.task3.model.Person;
 
 public class SelectionSortPeopleSorting implements PeopleSorting {
 
     @Override
-    public void sort(Person[] array) throws Exception {
+    public void sort(Person[] array) throws DuplicatedException {
 
         int outerCounter;
         int innerCounter;

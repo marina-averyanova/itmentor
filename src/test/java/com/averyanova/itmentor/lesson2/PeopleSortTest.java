@@ -1,8 +1,9 @@
 package com.averyanova.itmentor.lesson2;
 
-import com.maveryanova.itmentor.lesson2.task3.HeapSortPeopleSorting;
-import com.maveryanova.itmentor.lesson2.task3.SelectionSortPeopleSorting;
+import com.maveryanova.itmentor.lesson2.task3.sort.HeapSortPeopleSorting;
+import com.maveryanova.itmentor.lesson2.task3.sort.SelectionSortPeopleSorting;
 import com.maveryanova.itmentor.lesson2.task3.Task3;
+import com.maveryanova.itmentor.lesson2.task3.model.DuplicatedException;
 import com.maveryanova.itmentor.lesson2.task3.model.Person;
 import com.maveryanova.itmentor.lesson2.task3.model.Sex;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -63,7 +64,7 @@ public class PeopleSortTest {
 
         try {
             sorting.sort(arr);
-        } catch (Exception e) {
+        } catch (DuplicatedException e) {
             assertEquals("two equal people!", e.getMessage());
         }
     }
@@ -121,7 +122,7 @@ public class PeopleSortTest {
 
         try {
             sorting.sort(arr);
-        } catch (Exception e) {
+        } catch (DuplicatedException e) {
             assertEquals("two equal people!", e.getMessage());
         }
     }

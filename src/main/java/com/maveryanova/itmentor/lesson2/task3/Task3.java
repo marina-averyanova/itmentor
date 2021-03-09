@@ -5,11 +5,14 @@ import com.maveryanova.itmentor.Randomizer;
 import com.maveryanova.itmentor.lesson2.task3.model.Name;
 import com.maveryanova.itmentor.lesson2.task3.model.Person;
 import com.maveryanova.itmentor.lesson2.task3.model.Sex;
+import com.maveryanova.itmentor.lesson2.task3.sort.HeapSortPeopleSorting;
+import com.maveryanova.itmentor.lesson2.task3.sort.SelectionSortPeopleSorting;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.time.Instant;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Task3 {
     // 3. Дан массив объектов Person.
@@ -68,7 +71,11 @@ public class Task3 {
         Instant end2 = Instant.now();
 
         System.out.println("heap sort duration=" + (end2.toEpochMilli() - start2.toEpochMilli()));
-        System.out.println(Arrays.toString(array2));
+
+        System.out.println("sorted result:");
+        for (Person person : array2) {
+            System.out.println(person);
+        }
     }
 
     private Person generatePerson() {
@@ -98,7 +105,7 @@ public class Task3 {
     }
 
     private Name[] read(String fileName) throws IOException {
-        File file = new File(getClass().getClassLoader().getResource(fileName).getFile());
+        File file = new File(Objects.requireNonNull(getClass().getClassLoader().getResource(fileName)).getFile());
         String content = new String(Files.readAllBytes(file.toPath()));
 
         Gson gson = new Gson();
