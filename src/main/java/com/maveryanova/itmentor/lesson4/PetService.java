@@ -19,8 +19,8 @@ import java.util.Map;
 // Поля для сортировки – хозяин(имя, по возрастанию), если имена хозяев одинаковые - кличка животного.
 // Если и имя хозяина и кличка животного одинаковые - раньше вывести животное, у которого больше вес
 public class PetService {
-    private final Map<Integer, Pet> pets = new HashMap<>();
-    private final Map<String, LinkedList<Pet>> petsByNames = new HashMap<>();
+    protected final Map<Integer, Pet> pets = new HashMap<>();
+    protected final Map<String, LinkedList<Pet>> petsByNames = new HashMap<>();
 
     public void addPet(int id, String name, Person owner, int weight) throws Exception {
         if (pets.get(id) != null) {
