@@ -58,6 +58,6 @@ public class PetService {
     }
 
     public List<Pet> getPets() {
-        return new ArrayList<>(new ArrayList<>(pets.values()));
+        return new ArrayList<>(pets.values());
     }
 }
